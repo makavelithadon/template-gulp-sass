@@ -1,0 +1,27 @@
+{
+  "name": "template-gulp-sass",
+  "description": "A quickly web app starting template with gulp and sass",
+  "main": "index.js",
+  "authors": [
+    "Makavelithadon"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "template",
+    "gulp",
+    "and",
+    "sass"
+  ],
+  "homepage": "https://github.com/makavelithadon/template-gulp-sass",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "html5-boilerplate": "^5.3.0"
+  }
+}
