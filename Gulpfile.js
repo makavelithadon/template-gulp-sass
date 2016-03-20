@@ -13,6 +13,7 @@ var base = './app/',
 
 var paths = {
     scss: assets + 'scss/',
+    css: assets + 'css/',
     js: assets + 'js/',
     html: base,
     img: assets + 'img/',
@@ -65,12 +66,12 @@ return gulp.src(paths.html + '*.html')
 });
 
 gulp.task('styles', function () {
-  return gulp.src(paths.scss + 'main.scss')
+  return gulp.src(paths.scss + '**/*.scss')
     .pipe(plumber())
     .pipe(sass(config.sass.options).on('error', sass.logError))
     .pipe(autoprefixer(config.autoprefixer))
     .pipe(rename(config.sass.rename))
-    .pipe(gulp.dest(base + 'assets/css'))
+    .pipe(gulp.dest(paths.css))
     .pipe(reload(config.browsersync.options));
 });
 
