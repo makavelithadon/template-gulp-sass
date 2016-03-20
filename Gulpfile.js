@@ -51,6 +51,11 @@ var config = {
             'android 4'
           ],
         cascade: true
+    },
+    js: {
+        rename: {
+            suffix:'.min'
+        }
     }
 };
 
@@ -80,7 +85,7 @@ gulp.task('scripts', function () {
     .pipe(plumber())
     .pipe(cached('js'))
     .pipe(uglify())
-    .pipe(rename({suffix:'.min'}))
+    .pipe(rename(config.js.rename))
     .pipe(gulp.dest(base + 'assets/js'))
     .pipe(reload(config.browsersync.options));
 });
