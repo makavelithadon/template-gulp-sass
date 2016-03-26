@@ -51,11 +51,6 @@ var config = {
             'android 4'
           ],
         cascade: true
-    },
-    js: {
-        rename: {
-            suffix:'.min'
-        }
     }
 };
 
@@ -85,22 +80,21 @@ gulp.task('scripts', function () {
     .pipe(plumber())
     .pipe(cached('js'))
     .pipe(uglify())
-    .pipe(rename(config.js.rename))
+    .pipe(rename({suffix:'.min'}))
     .pipe(gulp.dest(base + 'assets/js'))
     .pipe(reload(config.browsersync.options));
 });
 
-gulp.task('watch:html', function () {
-    gulp.watch(paths.html + '*.html', gulp.series('html'));
-});
+gulp.task('watch', function () {
 
-gulp.task('watch:styles', function () {
+    gulp.watch(paths.html + '*.html', gulp.series('html'));
+
     gulp.watch(paths.scss + '**/*', gulp.series('styles'));
-});
-gulp.task('watch:scripts', function () {
+
     gulp.watch(paths.js + 'main.js', gulp.series('scripts'));
 });
 
-gulp.task('watch', gulp.parallel('watch:styles', 'watch:scripts', 'watch:html'));
+
+gulp.task('watch', gulp.parallel('watch'));
 
 gulp.task('default', gulp.parallel('watch', 'browser-sync'));
