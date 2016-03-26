@@ -1,1 +1,1 @@
-a{text-decoration:none}h2{font-style:italic}body{cursor:none !important;width:100%;height:100%;background:#000}
+a{text-decoration:none}h2{font-style:italic}html,body{height:100%;margin:0}.main.wrapper{min-height:100%;margin-bottom:-60px;background:#324373}.main.wrapper::after{content:"";display:block;height:60px}.main.wrapper .section{min-height:400px}.footer{height:60px;background:orange}

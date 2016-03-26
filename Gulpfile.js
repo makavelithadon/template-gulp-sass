@@ -8,14 +8,15 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     reload = browserSync.reload;
 
-var base = './app/',
-    assets = base + 'assets/';
+var base = './',
+    app = 'app/',
+    assets = app + 'assets/';
 
 var paths = {
     scss: assets + 'scss/',
     css: assets + 'css/',
     js: assets + 'js/',
-    html: base,
+    html: app,
     img: assets + 'img/',
     sprites: assets + 'img/sprites',
     fonts: assets + 'fonts'
@@ -24,7 +25,7 @@ var paths = {
 var config = {
     browsersync: {
         server: {
-            baseDir: base
+            baseDir: base + app
         },
         options: {
             stream: true
